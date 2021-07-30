@@ -16,7 +16,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,19 @@
   "bugs": {
     "url": "https://github.com/kaseiaoki/b-c/issues"
   },
-  "homepage": "https://github.com/kaseiaoki/b-c#readme"
+  "homepage": "https://github.com/kaseiaoki/b-c#readme",
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-config-next": "^11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.3.2"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "printWidth": 100
+  }
 }
