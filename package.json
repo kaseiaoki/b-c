@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "bulma": "^0.9.1",
+    "crypto": "^1.0.1",
     "html-entities": "^2.3.2",
     "next": "latest",
     "node-sass": "^5.0.0",

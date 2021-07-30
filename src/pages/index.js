@@ -1,6 +1,10 @@
 import getOpenBD from "../api/openBD"
+import randomeIsbn from "../lib/random-isbn"
 
 const Index = () => {
+  (async() => {
+    console.log(await getOpenBD("9784150503321"))
+  })();
   return (
     <>
       <section>
