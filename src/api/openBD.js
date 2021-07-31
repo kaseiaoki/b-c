@@ -1,5 +1,5 @@
 import nextConfig from '../../next.config'
-const openBDAPIUrl = nextConfig.env.OPEN_BD_API_URL
+const openBDAPIUrl = process.env.OPEN_BD_API_URL
 
 const GetOpenBD = async (isbn) => {
   const key = {
