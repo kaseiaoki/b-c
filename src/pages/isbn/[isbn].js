@@ -1,25 +1,28 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import getOpenBD from '../../api/openBD'
+import HeroHeader from '../../componets/hero-header'
+import SideMenu from '../../componets/side-menu'
+import Tile from '../../componets/tile'
 
 const Biblio = ({ title, author }) => {
   const router = useRouter()
   const { isbn } = router.query
   const json = (async () => {
-    return await getOpenBD('9784150503321')
+    return await getOpenBD(isbn)
   })()
 
   return (
     <>
-      <section className='hero is-primary'>
-        <div className='hero-body'>
-          <div classN='container'>
-            <h1 className='title'>{title} </h1>
-            <h2 className='subtitle'>{author}</h2>
-          </div>
+      <section className='columns m-3'>
+        <div className='column is-3'>
+          <SideMenu />
+        </div>
+        <div className='column is-9'>
+          <HeroHeader pageTitle={title} pageSubTitle={author} />
         </div>
       </section>
-      <section className='section'></section>
+      <section></section>
     </>
   )
 }
