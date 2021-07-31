@@ -3,7 +3,7 @@ const Tile = ({ title, content }) => {
     <>
       <div className='tile is-child box'>
         <p className='title'>{title}</p>
-        <p>{content}</p>
+        <div>{content}</div>
       </div>
     </>
   )
