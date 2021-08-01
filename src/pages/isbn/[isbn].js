@@ -1,5 +1,3 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
 import getOpenBD from '../../api/openBD'
 import HeroHeader from '../../componets/hero-header'
 import SideMenu from '../../componets/side-menu'
@@ -10,7 +8,7 @@ import SummaryTable from '../../foundations/summary-table'
 const Biblio = ({ summary, collateralDetail }) => {
   const summaryTable = SummaryTable(summary)
   const textContent =
-    collateralDetail.TextContent.length <= 2
+    2 <= collateralDetail.TextContent.length
       ? collateralDetail.TextContent[0].Text + collateralDetail.TextContent[1].Text
       : collateralDetail.TextContent[0].Text
   return (

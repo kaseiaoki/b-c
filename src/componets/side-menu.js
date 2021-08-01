@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import SearchForm from '../componets/search-form'
 
 const SideMenu = ({}) => {
   return (
@@ -10,14 +11,7 @@ const SideMenu = ({}) => {
         <p className='menu-label'>Search</p>
         <ul className='menu-list'>
           <li>
-            <div className='field has-addons'>
-              <p className='control'>
-                <input className='input' type='text' placeholder='isbn' />
-              </p>
-              <p className='control'>
-                <a className='button is-static'>Search</a>
-              </p>
-            </div>
+            <SearchForm />
           </li>
         </ul>
       </aside>
