@@ -40,6 +40,13 @@ export default Biblio
 
 export async function getServerSideProps({ params }) {
   const json = await getOpenBD(params.isbn)
+
+  if (!json) {
+    return {
+      notFound: true,
+    }
+  }
+
   const summary = json[0].summary
   const collateralDetail = json[0].onix.CollateralDetail
   return {

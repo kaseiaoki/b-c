@@ -10,8 +10,9 @@ const GetOpenBD = async (isbn) => {
   }
   const res = await fetch(`${openBDAPIUrl}?isbn=${isbn}`, key).catch((err) => {
     console.error(err)
+    return ''
   })
-  const json = await res.json()
+  const json = (await res) ? res.json() : ''
   if (json.errorMessage) {
     console.error(json.errorMessage)
     throw new Error('Failed to fetch API')

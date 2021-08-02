@@ -10,7 +10,7 @@ const SearchForm = ({}) => {
   return (
     <>
       <div className='field has-addons'>
-        <p className='control  is-expanded'>
+        <p className='control is-expanded'>
           <input
             className='input'
             type='text'
