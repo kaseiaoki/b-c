@@ -14,10 +14,10 @@ const Biblio = ({ summary, collateralDetail }) => {
   return (
     <>
       <section className='columns m-3'>
-        <div className='column is-2'>
+        <div className='column is-3'>
           <SideMenu />
         </div>
-        <div className='column is-10'>
+        <div className='column is-9'>
           <HeroHeader pageTitle={summary.title} pageSubTitle={summary.author} />
           <section>
             <div className='tile is-ancestor'>

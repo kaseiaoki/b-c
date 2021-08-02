@@ -14,6 +14,14 @@ const SideMenu = ({}) => {
             <SearchForm />
           </li>
         </ul>
+        <p className='menu-label'>link</p>
+        <ul className='menu-list'>
+          <li>
+            <Link href={`/`}>
+              <a>home</a>
+            </Link>
+          </li>
+        </ul>
       </aside>
     </>
   )
