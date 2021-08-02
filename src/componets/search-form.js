@@ -5,7 +5,9 @@ const SearchForm = ({}) => {
   const [search, setSearch] = useState('')
 
   const handleChange = (event) => {
-    setSearch(event.target.value)
+    // 数字か'-'のみ許可
+    const res = event.target.value.replace(/[^0-9-]/g, '')
+    setSearch(res)
   }
   return (
     <>
@@ -14,7 +16,7 @@ const SearchForm = ({}) => {
           <input
             className='input'
             type='text'
-            placeholder='isbn'
+            placeholder='isbn ex:978-4150503321'
             value={search}
             onChange={handleChange}
           />
