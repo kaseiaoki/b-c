@@ -6,11 +6,9 @@ import TileMedia from '../../componets/tile/tile-media'
 import SummaryTable from '../../foundations/summary-table'
 
 const Biblio = ({ summary, collateralDetail }) => {
-  const summaryTable = SummaryTable(summary)
-  const textContent =
-    2 <= collateralDetail.TextContent.length
-      ? collateralDetail.TextContent[0].Text + collateralDetail.TextContent[1].Text
-      : collateralDetail.TextContent[0].Text
+  const summaryTable = SummaryTable(summary) ?? ''
+  const detail = collateralDetail ?? ''
+  const cover = summary.cover ?? ''
   return (
     <>
       <section className='columns m-3'>
@@ -23,10 +21,19 @@ const Biblio = ({ summary, collateralDetail }) => {
             <div className='tile is-ancestor'>
               <div className='tile is-5 is-vertical is-parent'>
                 <Tile title={'summary'} content={summaryTable} />
-                <TileMedia src={summary.cover} />
+                <TileMedia src={cover} />
               </div>
               <div className='tile is-7 is-parent'>
-                <Tile title={summary.title} content={textContent} />
+                <Tile
+                  title={summary.title}
+                  content={
+                    detail.TextContent
+                      ? detail.TextContent.reduce(
+                          (accumulator, currentValue) => accumulator.Text + currentValue.Text,
+                        )
+                      : ''
+                  }
+                />
               </div>
             </div>
           </section>
@@ -47,8 +54,8 @@ export async function getServerSideProps({ params }) {
     }
   }
 
-  const summary = json[0].summary
-  const collateralDetail = json[0].onix.CollateralDetail
+  const summary = json[0].summary ?? ''
+  const collateralDetail = json[0].onix.CollateralDetail ?? ''
   return {
     props: {
       summary,
