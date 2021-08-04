@@ -9,6 +9,7 @@ const Biblio = ({ summary, collateralDetail }) => {
   const summaryTable = SummaryTable(summary) ?? ''
   const detail = collateralDetail ?? ''
   const cover = summary.cover ?? ''
+  console.log(detail.TextContent.length)
   return (
     <>
       <section className='columns m-3'>
@@ -27,11 +28,11 @@ const Biblio = ({ summary, collateralDetail }) => {
                 <Tile
                   title={summary.title}
                   content={
-                    detail.TextContent
+                    2 <= detail.TextContent.length
                       ? detail.TextContent.reduce(
                           (accumulator, currentValue) => accumulator.Text + currentValue.Text,
                         )
-                      : ''
+                      : detail.TextContent[0].Text
                   }
                 />
               </div>
