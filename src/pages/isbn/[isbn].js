@@ -4,9 +4,11 @@ import SideMenu from '../../componets/side-menu'
 import Tile from '../../componets/tile/tile'
 import TileMedia from '../../componets/tile/tile-media'
 import SummaryTable from '../../foundations/summary-table'
+import HanmotoTable from '../../foundations/hanmoto-table'
 
-const Biblio = ({ summary, collateralDetail }) => {
+const Biblio = ({ summary, collateralDetail, hanmoto }) => {
   const summaryTable = SummaryTable(summary) ?? ''
+  const hanmotoTable = HanmotoTable(hanmoto)
   const detail = collateralDetail ?? ''
   const cover = summary.cover ?? ''
   console.log(detail.TextContent.length)
@@ -57,10 +59,12 @@ export async function getServerSideProps({ params }) {
 
   const summary = json[0].summary ?? ''
   const collateralDetail = json[0].onix.CollateralDetail ?? ''
+  const hanmoto = json[0].hamoto ?? ''
   return {
     props: {
       summary,
       collateralDetail,
+      hanmoto,
     },
   }
 }
