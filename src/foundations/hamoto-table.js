@@ -4,7 +4,7 @@ const SummaryTable = (hamoto) => {
       <table className='table is-fullwidth'>
         <thead>
           <tr>
-            <th>Summary</th>
+            <th>Hamoto</th>
             <th>Data</th>
           </tr>
         </thead>
